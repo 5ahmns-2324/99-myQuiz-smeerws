@@ -15,6 +15,15 @@ public class Manager : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+        int[] array1 = new int[3] { 1, 2, 3 };
+        int[] arrayTmp = new int[3];
+
+        arrayTmp = array1;
+
+        arrayTmp[2] = 99;
+        Debug.Log("tmp array " +arrayTmp[2]);
+        Debug.Log("1 array " +array1[2]);
+
         //Testen
         //Frage  1 und Antworten Setup
         Frage frage1 = new Frage();
@@ -29,7 +38,7 @@ public class Manager : MonoBehaviour
 
         Antwort[] antwortenF1 = new Antwort[3] { a1, a2, a3 };
         frage1.SetAntworten(antwortenF1);
-        frage1.PrintAllAntworten();
+        //frage1.PrintAllAntworten();
 
         //Frage  2 und Antworten Setup
         Frage frage2 = new Frage();
@@ -46,7 +55,7 @@ public class Manager : MonoBehaviour
         antwortenF2[1].SetAntwortText("f2a2");
         antwortenF2[2].SetAntwortText("f2a3");
         frage2.SetAntworten(antwortenF2);
-        frage2.PrintAllAntworten();
+        //frage2.PrintAllAntworten();
         frage2.RandomizeAntworten();
 
 
@@ -72,11 +81,5 @@ public class Manager : MonoBehaviour
         //Debug.Log(meineFragen[Random.Range(0, 2)].GetFrageText());
         //Debug.Log(meineFragen[Random.Range(0, 2)].GetFrageText());
 
-    }
-
-    // Update is called once per frame
-    void Update()
-    {
-        
     }
 }

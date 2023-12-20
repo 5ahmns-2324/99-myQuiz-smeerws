@@ -3,7 +3,7 @@ using UnityEngine;
 public class Frage
 {
     //Instanzvariable deklarieren
-    [SerializeField] private string fragenText;
+    private string fragenText;
     private Antwort[] antworten;
 
     //Konstruktor
@@ -44,30 +44,28 @@ public class Frage
         //erstes Element im Array
         order[0] = i;
 
-        i = Random.Range(0, antworten.Length);
-
         //zweites Element im Array
-        while(order[0] == i)
+        do
         {
             i = Random.Range(0, antworten.Length);
         }
+        while (order[0] == i);
 
         order[1] = i;
 
         //drittes Element im Array
-        i = Random.Range(0, antworten.Length);
-
-        while(order[0] == i || order[1] == i)
+        do
         {
             i = Random.Range(0, antworten.Length);
         }
-        
+        while (order[0] == i || order[1] == i);        
+ 
         order[2] = i;
 
         //Ausgabe 
         foreach(int index in order)
         {
-            Debug.Log("order" + index);
+            Debug.Log(" neue order" + index);
         }
     }
 }
