@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -15,14 +16,21 @@ public class Manager : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        int[] array1 = new int[3] { 1, 2, 3 };
-        int[] arrayTmp = new int[3];
+        //Deklaration Array
+        //Erklärung Referenz/Value Variablen
+        //int[] array1 = new int[3] { 1, 2, 3 };
+        //int[] arraytmp = new int[3];
+        //int[] arrayCopy = new int[3];
 
-        arrayTmp = array1;
+        //arraytmp = array1;
+        //Array.Copy(array1, arrayCopy, 3);
 
-        arrayTmp[2] = 99;
-        Debug.Log("tmp array " +arrayTmp[2]);
-        Debug.Log("1 array " +array1[2]);
+        //arraytmp[2] = 99;
+        
+        //Debug.Log("array 1: " + array1[2]);
+        //Debug.Log("array tmp: " + arraytmp[2]);
+        //Debug.Log("array copy: " + arrayCopy[2]);
+
 
         //Testen
         //Frage  1 und Antworten Setup
@@ -36,8 +44,11 @@ public class Manager : MonoBehaviour
         Antwort a3 = new Antwort();
         a3.SetAntwortText("f1a3");
 
+        
+
         Antwort[] antwortenF1 = new Antwort[3] { a1, a2, a3 };
         frage1.SetAntworten(antwortenF1);
+
         //frage1.PrintAllAntworten();
 
         //Frage  2 und Antworten Setup
@@ -56,7 +67,7 @@ public class Manager : MonoBehaviour
         antwortenF2[2].SetAntwortText("f2a3");
         frage2.SetAntworten(antwortenF2);
         //frage2.PrintAllAntworten();
-        frage2.RandomizeAntworten();
+        frage2.ShuffleAntworten();
 
 
         Frage frage3 = new Frage();

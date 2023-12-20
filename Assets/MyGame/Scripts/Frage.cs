@@ -35,7 +35,7 @@ public class Frage
         }
     }
 
-    public void RandomizeAntworten()
+    public Antwort[] ShuffleAntworten()
     {
         int i = Random.Range(0,antworten.Length);
 
@@ -62,10 +62,21 @@ public class Frage
  
         order[2] = i;
 
+        Antwort[] tmpAntworten = new Antwort[3];
+        System.Array.Copy(antworten, tmpAntworten, 3);
+
+        for(int j=0; j < antworten.Length; j++)
+        {
+            antworten[j] = tmpAntworten[order[j]];
+            Debug.Log("----------"+j+" : "+ antworten[j].GetAntwortText());
+        }
+
         //Ausgabe 
         foreach(int index in order)
         {
             Debug.Log(" neue order" + index);
         }
+
+        return antworten;
     }
 }
