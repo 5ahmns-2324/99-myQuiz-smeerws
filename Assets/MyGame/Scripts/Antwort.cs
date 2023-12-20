@@ -1,12 +1,9 @@
-using System.Collections;
-using System.Collections.Generic;
-using UnityEngine;
-
-public class Antwort : MonoBehaviour
+public class Antwort
 {
     private string antwortText;
     private bool valid;
 
+    //Konstruktor
     public Antwort() { }
 
     //Parameter wird Instanzvariable zugewiesen
@@ -20,27 +17,14 @@ public class Antwort : MonoBehaviour
         return antwortText;
     }
 
-    public bool IsValid()
+    public bool IsCorrect()
     {
         return valid;
     }
 
     //Parameter wird Instanzvariable zugewiesen
-    public void SetValid(bool valid)
+    public void SetAntwortIsCorrect(bool valid)
     {
         this.valid = valid;
-    }
-
-
-
-    // Start is called before the first frame update
-    void Start()
-    {
-    }
-
-    // Update is called once per frame
-    void Update()
-    {
-        
     }
 }
